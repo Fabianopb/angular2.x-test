@@ -1,4 +1,6 @@
-<p>
-  {{todo.index}}: {{todo.description}}
-</p>
+<p>{{todo.description}}</p>
+Description: <input type="text" [(ngModel)]="todo.description" /><br />
+Due to:
+<input type="text" [(ngModel)]="todo.dueTo" pattern="^\d\d\d\d-\d\d-\d\d$" required /><br />
+Assignee: <input type="text" [(ngModel)]="todo.assignee" /><br />
 <button routerLink="/">Back</button>
