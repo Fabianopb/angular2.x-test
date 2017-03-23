@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 
 const appRoutes = [
   { path: '', component: TodoComponent },
-  { path: 'todo', component: EditTodoComponent },
+  { path: 'todo/:index', component: EditTodoComponent },
 ];
 @NgModule({
   declarations: [
