@@ -7,7 +7,10 @@ import { DatePipe } from '@angular/common';
 export class DateFormatPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    return new DatePipe('fi').transform(value, 'd.M.yyyy');
+    if (typeof value === 'string') {
+      return new DatePipe('fi').transform(value, 'd.M.yyyy');
+    }
+    return '';
   }
 
 }
