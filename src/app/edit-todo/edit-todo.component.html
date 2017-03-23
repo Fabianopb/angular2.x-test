@@ -1,6 +1,28 @@
 <p>{{todo.description}}</p>
-Description: <input type="text" [(ngModel)]="todo.description" /><br />
+Description:
+<input
+  type="text"
+  [(ngModel)]="todo.description"
+  required
+  #description="ngModel" />
+<span *ngIf="description.invalid && description.touched" class="error-message">Can't be empty</span>
+<br />
 Due to:
-<input type="text" [(ngModel)]="todo.dueTo" pattern="^\d\d\d\d-\d\d-\d\d$" required /><br />
-Assignee: <input type="text" [(ngModel)]="todo.assignee" /><br />
+<input
+  type="text"
+  [(ngModel)]="todo.dueTo"
+  pattern="^\d\d\d\d-\d\d-\d\d$"
+  required
+  #dueTo="ngModel" />
+<span *ngIf="dueTo.invalid && dueTo.touched" class="error-message">Invalid format</span>
+<br />
+Assignee:
+<input
+  type="text"
+  [(ngModel)]="todo.assignee"
+  minlength="6"
+  required
+  #assignee="ngModel" />
+<span *ngIf="assignee.invalid && assignee.touched" class="error-message">Minimum length of 6 characters</span>
+<br />
 <button routerLink="/">Back</button>
