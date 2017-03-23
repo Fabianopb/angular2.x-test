@@ -1,28 +1,33 @@
-<p>{{todo.description}}</p>
-Description:
-<input
-  type="text"
-  [(ngModel)]="todo.description"
-  required
-  #description="ngModel" />
-<span *ngIf="description.invalid && description.touched" class="error-message">Can't be empty</span>
-<br />
-Due to:
-<input
-  type="text"
-  [(ngModel)]="todo.dueTo"
-  pattern="^\d\d\d\d-\d\d-\d\d$"
-  required
-  #dueTo="ngModel" />
-<span *ngIf="dueTo.invalid && dueTo.touched" class="error-message">Invalid format</span>
-<br />
-Assignee:
-<input
-  type="text"
-  [(ngModel)]="todo.assignee"
-  minlength="6"
-  required
-  #assignee="ngModel" />
-<span *ngIf="assignee.invalid && assignee.touched" class="error-message">Minimum length of 6 characters</span>
-<br />
-<button routerLink="/">Back</button>
+<p>{{ todo.description }}</p>
+<form #todoForm="ngForm">
+  Description:
+  <input
+    type="text"
+    name="description"
+    [(ngModel)]="todo.description"
+    required
+    #description="ngModel" />
+  <span *ngIf="isFieldValid(description)" class="error-message">Can't be empty</span>
+  <br />
+  Due to:
+  <input
+    type="text"
+    name="dueTo"
+    [(ngModel)]="todo.dueTo"
+    pattern="^\d\d\d\d-\d\d-\d\d$"
+    required
+    #dueTo="ngModel" />
+  <span *ngIf="isFieldValid(dueTo)" class="error-message">Invalid format</span>
+  <br />
+  Assignee:
+  <input
+    type="text"
+    name="assignee"
+    [(ngModel)]="todo.assignee"
+    minlength="6"
+    required
+    #assignee="ngModel" />
+  <span *ngIf="isFieldValid(assignee)" class="error-message">Minimum length of 6 characters</span>
+  <br />
+  <button routerLink="/" [disabled]="todoForm.invalid">Back</button>
+</form>

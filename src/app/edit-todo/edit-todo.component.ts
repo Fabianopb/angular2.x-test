@@ -17,7 +17,10 @@ export class EditTodoComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.todo = this.todoService.getTodos()[+params['index']];
     });
+  }
 
+  isFieldValid(fieldName) {
+    return fieldName.invalid && fieldName.touched;
   }
 
 }
