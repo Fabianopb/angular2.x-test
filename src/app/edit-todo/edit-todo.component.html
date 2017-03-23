@@ -1,4 +1,5 @@
 <p>{{ todo.description }}</p>
+<p>Due to: {{ todo.dueTo | dateFormat }}</p>
 <form #todoForm="ngForm">
   Description:
   <input

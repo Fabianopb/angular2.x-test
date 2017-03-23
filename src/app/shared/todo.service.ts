@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
 const TODOS = [
-  { description: 'do laundry', done: false },
-  { description: 'learn angular', done: false }
+  { description: 'do laundry', done: false, dueTo: '2017-04-04' },
+  { description: 'learn angular', done: false, dueTo: '2017-04-21' }
 ];
 
 @Injectable()
