@@ -1,5 +1,8 @@
-# AngularWorkshop
-[![Build Status](https://travis-ci.org/hollannikas/angular-workshop.svg?branch=master)](https://travis-ci.org/hollannikas/angular-workshop)
+# Angular 2.x test
+
+This project was developed during Angular Workshops from [Angular Finland](https://www.meetup.com/Angular-Finland/).
+
+## About the project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1.
 
